@@ -1,0 +1,13 @@
+// $Id$
+// vim:ft=javascript
+
+// If your extension references something external, use ARG_WITH
+// ARG_WITH("mini_cache", "for mini_cache support", "no");
+
+// Otherwise, use ARG_ENABLE
+// ARG_ENABLE("mini_cache", "enable mini_cache support", "no");
+
+if (PHP_MINI_CACHE != "no") {
+	EXTENSION("mini_cache", "mini_cache.c", PHP_EXTNAME_SHARED, "/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1");
+}
+
