@@ -1,0 +1,10 @@
+mini_cache.lo: /home/johnny/github/php_mini_cache_github/mini_cache.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/home/johnny/github/php_mini_cache_github $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/johnny/github/php_mini_cache_github/mini_cache.c -o mini_cache.lo 
+MiniCache.lo: /home/johnny/github/php_mini_cache_github/MiniCache.c
+	$(LIBTOOL) --mode=compile $(CC) -DZEND_ENABLE_STATIC_TSRMLS_CACHE=1 -I. -I/home/johnny/github/php_mini_cache_github $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)  -c /home/johnny/github/php_mini_cache_github/MiniCache.c -o MiniCache.lo 
+$(phplibdir)/mini_cache.la: ./mini_cache.la
+	$(LIBTOOL) --mode=install cp ./mini_cache.la $(phplibdir)
+
+./mini_cache.la: $(shared_objects_mini_cache) $(MINI_CACHE_SHARED_DEPENDENCIES)
+	$(LIBTOOL) --mode=link $(CC) $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS) -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_mini_cache) $(MINI_CACHE_SHARED_LIBADD)
+

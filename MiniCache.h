@@ -10,6 +10,7 @@ PHP_METHOD(MiniCache, __construct);
 PHP_METHOD(MiniCache, __destruct);
 PHP_METHOD(MiniCache, login);
 PHP_METHOD(MiniCache, clean_recv_buff);
+PHP_METHOD(MiniCache, clean_send_buff);
 PHP_METHOD(MiniCache, connect);
 PHP_METHOD(MiniCache, set);
 PHP_METHOD(MiniCache, get);
